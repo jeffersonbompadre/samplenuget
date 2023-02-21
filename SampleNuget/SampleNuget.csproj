@@ -1,16 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+        <PackageId>jefferson_bompadre.SampleNuGet</PackageId>
+        <Authors>Jefferson Bompadre</Authors>
+        <Description>Pacote exemplo para publicar no nuget.org a partir do GitHub</Description>
+        <PackageProjectUrl>https://github.com/jeffersonbompadre</PackageProjectUrl>
+        <PackageLicenseFile>MIT</PackageLicenseFile>
 
-  <ItemGroup>
-    <PackageReference Include="MinVer" Version="4.3.0">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
-
+        <PackageTags>sample, library</PackageTags>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        
+        <NoWarn>$(NoWarn);CS1591</NoWarn>
+        <EnablePackageValidation>true</EnablePackageValidation>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <!-- <None Include="LICENSE.txt" Pack="true" PackagePath=""/> -->
+    </ItemGroup>
 </Project>
