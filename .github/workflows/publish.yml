@@ -50,8 +50,8 @@ jobs:
           name: nuget
           path: ${{ env.NuGetDirectory }}
 
-      - name: Install nuget validator
-        run: dotnet tool update jefferson_bompadre.Framework.NuGetPackageValidation.Tool --global
+      # - name: Install nuget validator
+      #   run: dotnet tool update jefferson_bompadre.Framework.NuGetPackageValidation.Tool --global
 
       # Validate metadata and content of the NuGet package
       # https://www.nuget.org/packages/jefferson_bompadre.Framework.NuGetPackageValidation.Tool#readme-body-tab
