@@ -3,24 +3,19 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-
+        
         <PackageId>jefferson_bompadre.SampleNuGet</PackageId>
         <Authors>Jefferson Bompadre</Authors>
         <Description>Pacote exemplo para publicar no nuget.org a partir do GitHub</Description>
         <PackageProjectUrl>https://github.com/jeffersonbompadre/samplenuget</PackageProjectUrl>
-        <!-- <PackageLicenseFile>README.md</PackageLicenseFile> -->
-
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageTags>sample, library</PackageTags>
-        <GenerateDocumentationFile>True</GenerateDocumentationFile>
-        
-        <NoWarn>$(NoWarn);CS1591</NoWarn>
-        <EnablePackageValidation>true</EnablePackageValidation>
+
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-        <!-- <None Include="LICENSE.txt" Pack="true" PackagePath=""/> -->
     </ItemGroup>
 </Project>
