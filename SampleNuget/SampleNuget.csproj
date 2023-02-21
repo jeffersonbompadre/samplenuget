@@ -7,7 +7,7 @@
         <PackageId>jefferson_bompadre.SampleNuGet</PackageId>
         <Authors>Jefferson Bompadre</Authors>
         <Description>Pacote exemplo para publicar no nuget.org a partir do GitHub</Description>
-        <PackageProjectUrl>https://github.com/jeffersonbompadre</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/jeffersonbompadre/samplenuget</PackageProjectUrl>
         <!-- <PackageLicenseFile>README.md</PackageLicenseFile> -->
 
         <PackageTags>sample, library</PackageTags>
