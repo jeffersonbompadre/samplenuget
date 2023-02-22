@@ -14,7 +14,16 @@ on:
       - published    # Run the workflow when a new GitHub release is published
 
 jobs:
-  pack-push:
+  run_test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET 7
+      uses: actions/setup-dotnet@v3
+    - name: Run tests
+      run: dotnet test --configuration Release
+      
+  create_package:
     env:
       CAMINHO_PROJETO: ./SampleNuget/SampleNuget.csproj
 
@@ -26,20 +35,14 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 7.0
-
     - name: Geração do package
       run: dotnet pack ${{ env.CAMINHO_PROJETO }} -c Release -o out
 
+  publish_package:
+    runs-on: ubuntu-latest
+    needs: [ run_test, create_package ]
+    steps:
     - name: Push no NuGet
       run: |
         cd out
         dotnet nuget push *.nupkg --api-key ${{ secrets.NUGET_APIKEY }} --source "https://api.nuget.org/v3/index.json" --skip-duplicate
-
-  run_test:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET 7
-      uses: actions/setup-dotnet@v3
-    - name: Run tests
-      run: dotnet test --configuration Release
