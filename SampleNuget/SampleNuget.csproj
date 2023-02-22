@@ -4,7 +4,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         
-        <PackageId>SampleNuGet</PackageId>
+        <PackageId>jefferson_bompadre.SampleNuGet</PackageId>
         <Version>1.1.0</Version>
         <Authors>Jefferson Bompadre</Authors>
         <PackageTags>sample, library</PackageTags>
