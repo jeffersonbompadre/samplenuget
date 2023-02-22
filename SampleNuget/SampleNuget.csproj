@@ -5,7 +5,7 @@
         <Nullable>enable</Nullable>
         
         <PackageId>jefferson_bompadre.SampleNuGet</PackageId>
-        <Version>1.2.0</Version>
+        <Version>1.3.0</Version>
         <Authors>Jefferson Bompadre</Authors>
         <PackageTags>sample, library</PackageTags>
         <Description>Pacote exemplo para publicar no nuget.org a partir do GitHub</Description>
